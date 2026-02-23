@@ -1,0 +1,19 @@
+------------------- LOG -------------------
+Console Error: 'utf-8' codec can't decode bytes in position 26-27: invalid continuation byte
+Time: 2026-02-19 17:00:00
+-------------------------------------------
+------------------- LOG -------------------
+Console Error: 'utf-8' codec can't decode bytes in position 26-27: invalid continuation byte
+Time: 2026-02-19 17:03:44
+------------------- LOG -------------------
+Console Error: 'utf-8' codec can't decode bytes in position 26-27: invalid continuation byte
+Time: 2026-02-19 17:04:08
+------------------- LOG -------------------
+Console Error: 'utf-8' codec can't decode bytes in position 26-27: invalid continuation byte
+Time: 2026-02-19 17:04:40
+
+ID: 3004 | 2026-02-23 17:07:10.493185 | 'utf-8' codec can't decode bytes in position 26-27: invalid continuation byte
+ID: 2953 | 2026-02-23 17:14:33.174027 | 'utf-8' codec can't decode byte 0x90 in position 4: invalid start byte
+ID: 2721 | 2026-02-23 17:15:01.200747 | 'utf-8' codec can't decode byte 0x90 in position 2: invalid start byte
+ID: 3033 | 2026-02-23 17:15:29.579882 | 'utf-8' codec can't decode byte 0x89 in position 0: invalid start byte
+ID: 2965 | 2026-02-23 17:15:48.707592 | 'utf-8' codec can't decode byte 0x80 in position 2: invalid start byte

@@ -1,0 +1,43 @@
+Better Text Licence
+
+This Better Text Licence (the “License”) governs the use of the Better Text software, including but not limited to the application itself, any associated documentation, and any supplementary materials provided by [Your Name/Organization Name] (collectively referred to as the “Software”). By accessing, downloading, installing, using, or distributing the Software, you agree to be bound by the terms and conditions of this License. Please read this License carefully. If you do not agree to these terms, do not use the Software.
+
+1. Grant of License
+
+BetterText grants you a non-exclusive, worldwide, royalty-free license to use the Software, subject to the restrictions outlined in this License. This license is intended for your personal, non-commercial use only. You are not granted any rights to modify, distribute, sublicense, sell, lease, or otherwise transfer the Software or any part thereof.
+
+2. Restrictions on Use
+
+The following uses of the Software are strictly prohibited:
+
+*   Reverse engineering, decompiling, or disassembling the Software.
+*   Modifying the Software in any way, including but not limited to altering its source code, modifying its executable files, or adding any proprietary code.
+*   Using the Software for any commercial purpose, including but not limited to selling it, offering it as a service, or using it to generate revenue.
+*   Distributing the Software to any third party without the express written consent of [Your Name/Organization Name].
+*   Using the Software in a manner that violates any applicable laws or regulations.
+*   Using the Software in a manner that could damage, disrupt, or impair the Software or any related systems.
+*   Creating derivative works based on the Software without express written permission.
+
+3. Warranty Disclaimer
+
+The Software is provided “as is” without warranties of any kind, either express or implied. [Your Name/Organization Name] makes no representations, warranties, or conditions regarding the Software, including but not limited to its merchantability, fitness for a particular purpose, or non-infringement. You assume all risks associated with the use of the Software.  To the extent permitted by applicable law, BetterText is not liable for any damages arising from the use of the Software, including but not limited to direct, indirect, incidental, consequential, or punitive damages.
+
+4. Limitation of Liability
+
+In no event shall BetterText be liable for any claims arising out of the use of the Software, including but not limited to claims for breach of contract, negligence, or other torts.  This limitation of liability applies regardless of the cause of action, whether in contract, tort, or otherwise.
+
+5. Termination
+
+BetterText may terminate this License immediately if you violate any of the terms and conditions of this License.  In such case, you shall immediately cease all use of the Software and destroy any copies of the Software in your possession.
+
+---
+
+This License is intended to provide a clear and comprehensive framework for the use of the Better Text software. It is important to understand and adhere to these terms to ensure the continued availability and support of the Software.  The Software is a product of considerable effort and development, and this License reflects [Your Name/Organization Name]'s commitment to protecting its intellectual property and ensuring a positive user experience.  We appreciate your cooperation in upholding the terms of this License.
+
+To further clarify and expand upon the stipulations within the original Better Text Licence, this extended version provides a more detailed breakdown of permissible and prohibited activities. Specifically, the section on Restrictions on Use is elaborated to address potential ambiguities and safeguard [Your Name/Organization Name]'s interests. The disclaimer of warranties is reinforced, emphasizing the “as is” nature of the software and limiting any liability associated with its use. Furthermore, the limitation of liability clause is strengthened to mitigate potential legal risks.
+
+The termination clause provides [Your Name/Organization Name] with the authority to immediately revoke the license should any violation of the terms occur. This proactive approach ensures the integrity of the Software and prevents unauthorized use or distribution.  The governing law clause designates a specific jurisdiction, facilitating legal proceedings in the event of a dispute.  Finally, the copyright notice clearly identifies the intellectual property rights associated with the Software.
+
+Beyond the core legal stipulations, this extended version incorporates a more detailed explanation of the underlying principles guiding the Better Text project.  The project’s origins and development efforts are acknowledged, fostering a sense of value and encouraging responsible usage. The inclusion of contact information facilitates communication and provides a channel for users to address any questions or concerns.
+
+It's crucial to understand that this extended text doesn’t fundamentally alter the legal obligations imposed by the Better Text Licence. It serves primarily to provide greater clarity and detail, ensuring a comprehensive understanding of the terms.  The core terms remain unchanged, reinforcing the non-commercial, personal use restriction and the safeguarding of [Your Name/Organization Name]'s intellectual property.  This expanded version is designed to be a supplementary resource, aiding in the interpretation and application of the Better Text Licence. It’s recommended that users carefully review both the original and extended versions to fully grasp their rights and responsibilities concerning the Software.  The intent is to promote responsible use, minimize potential misunderstandings, and maintain the quality and integrity of the Better Text project.  The structure of this extended version is designed to be easily digestible and accessible, prioritizing clarity and conciseness in its presentation.  Each section is clearly delineated, and key terms are highlighted to facilitate understanding.  Regularly reviewing this extended text alongside the original Better Text Licence is advised to maintain a consistent understanding of the usage terms.  The development of this extended text was driven by a commitment to user education and a desire to provide comprehensive support for the Better Text Software.  It reflects a dedication to transparency and fostering a positive relationship with the Software’s users.  Ultimately, this extended version serves as a valuable resource for anyone seeking to utilize or contribute to the Better Text project, solidifying its place as a trusted and reliable tool. The ongoing support and maintenance of the Better Text project relies on users understanding and adhering to the terms outlined in this comprehensive Licence, ensuring its continued success and evolution.
