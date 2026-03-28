@@ -69,4 +69,4 @@ curl -fL "$DEB_URL" -o "$DEB_PATH"
 say "Installing .deb (force overwrite if conflicts)"
 sudo dpkg -i --force-overwrite "$DEB_PATH"
 
-say "${GREEN}Installed!${RESET} Run: ${BOLD}bettertext${RESET}"
+say "${GREEN}BetterText Installed!${RESET} Run: ${BOLD}bettertext${RESET}"
