@@ -68,5 +68,4 @@ curl -fL "$DEB_URL" -o "$DEB_PATH"
 
 say "Installing .deb (requires sudo)"
 sudo dpkg -i "$DEB_PATH"
-
-say "${GREEN}Installed!${RESET} Run: ${BOLD}bettertext${RESET}"
+say "${GREEN}BetterText is Installed!${RESET} Run: ${BOLD}bettertext${RESET} in order to boot the app."
