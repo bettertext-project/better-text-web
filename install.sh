@@ -1,72 +1,90 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# --- CONFIG ---
+APP_NAME="BetterText"
 APP_DIR="$HOME/Bettertext"
 REPO_URL="https://github.com/bettertext-project/better-text-web.git"
-DEB_URL="https://github.com/bettertext-project/better-text-web/blob/main/bettertext_1.0_amd64.deb"
-DEB_PATH="$APP_DIR/bettertext_1.0.0-2_all.deb"
+DEB_URL="https://github.com/bettertext-project/better-text-web/raw/main/bettertext_1.0_amd64.deb"
+DEB_PATH="$APP_DIR/bettertext_1.0_amd64.deb"
 
-# Colors
+# --- COLORS ---
 BOLD="\033[1m"
 GREEN="\033[32m"
 YELLOW="\033[33m"
 RED="\033[31m"
+BLUE="\033[34m"
 RESET="\033[0m"
 
-say() { echo -e "${BOLD}[BetterText]${RESET} $*"; }
-warn() { echo -e "${YELLOW}[BetterText]${RESET} $*"; }
-err() { echo -e "${RED}[BetterText]${RESET} $*"; }
+log()   { echo -e "${BLUE}${BOLD}[$APP_NAME]${RESET} $*"; }
+ok()    { echo -e "${GREEN}${BOLD}[$APP_NAME]${RESET} $*"; }
+warn()  { echo -e "${YELLOW}${BOLD}[$APP_NAME]${RESET} $*"; }
+fail()  { echo -e "${RED}${BOLD}[$APP_NAME]${RESET} $*"; exit 1; }
 
 confirm() {
-  local prompt="$1"
-  read -r -p "${prompt} [y/N]: " ans || true
-  case "${ans,,}" in y|yes) return 0;; *) return 1;; esac
+  read -r -p "$(echo -e "${BOLD}$1 [y/N]: ${RESET}")" ans || true
+  [[ "${ans,,}" =~ ^(y|yes)$ ]]
 }
 
+# --- CHECK DEPENDENCIES ---
+log "Checking dependencies..."
 need_cmds=(curl git dpkg)
 missing=()
-for c in "${need_cmds[@]}"; do
-  command -v "$c" >/dev/null 2>&1 || missing+=("$c")
+
+for cmd in "${need_cmds[@]}"; do
+  command -v "$cmd" >/dev/null 2>&1 || missing+=("$cmd")
 done
 
 if (( ${#missing[@]} > 0 )); then
-  warn "Missing dependencies: ${missing[*]}"
-  if command -v sudo >/dev/null 2>&1; then
-    if confirm "Install missing dependencies now?"; then
-      sudo apt update
-      sudo apt install -y curl git dpkg
-    else
-      err "Please install dependencies and re-run."
-      exit 1
-    fi
+  warn "Missing: ${missing[*]}"
+  if command -v sudo >/dev/null 2>&1 && confirm "Install them now?"; then
+    sudo apt update
+    sudo apt install -y "${missing[@]}"
   else
-    err "sudo not available. Install dependencies manually and re-run."
-    exit 1
+    fail "Please install required packages and re-run."
   fi
 fi
 
-say "This will install BetterText to: ${BOLD}$APP_DIR${RESET}"
-if [ -d "$APP_DIR" ] && [ ! -d "$APP_DIR/.git" ]; then
-  warn "$APP_DIR exists but is not a git repo."
-  if ! confirm "Continue and keep existing files?"; then
-    err "Cancelled."
-    exit 1
-  fi
-fi
-
+# --- SETUP DIRECTORY ---
+log "Preparing install directory..."
 mkdir -p "$APP_DIR"
 
-if [ ! -d "$APP_DIR/.git" ]; then
-  say "Cloning repo into $APP_DIR"
-  git clone "$REPO_URL" "$APP_DIR"
+if [ -d "$APP_DIR/.git" ]; then
+  log "Repository already exists (skipping clone)"
 else
-  say "Repo already exists in $APP_DIR (skipping clone)"
+  if [ -d "$APP_DIR" ] && [ "$(ls -A "$APP_DIR")" ]; then
+    warn "$APP_DIR is not empty."
+    confirm "Continue anyway?" || fail "Cancelled."
+  fi
+
+  log "Cloning repository..."
+  git clone "$REPO_URL" "$APP_DIR"
 fi
 
-say "Downloading .deb"
-curl -fL "$DEB_URL" -o "$DEB_PATH"
+# --- DOWNLOAD PACKAGE ---
+log "Downloading package..."
+if ! curl -fL "$DEB_URL" -o "$DEB_PATH"; then
+  fail "Download failed. Check your internet or URL."
+fi
 
-say "Installing .deb (force overwrite if conflicts)"
-sudo dpkg -i --force-overwrite "$DEB_PATH"
+# Verify it's actually a .deb
+if ! file "$DEB_PATH" | grep -q "Debian binary package"; then
+  fail "Downloaded file is not a valid .deb package."
+fi
 
-say "${GREEN}BetterText Installed!${RESET} Run: ${BOLD}bettertext${RESET}"
+ok "Download complete"
+
+# --- INSTALL ---
+log "Installing package..."
+if sudo dpkg -i "$DEB_PATH"; then
+  ok "Installation successful"
+else
+  warn "Fixing dependencies..."
+  sudo apt-get install -f -y
+fi
+
+# --- DONE ---
+echo
+ok "🎉 $APP_NAME installed successfully!"
+echo -e "Run it with: ${BOLD}bettertext${RESET}"
+echo
