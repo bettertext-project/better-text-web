@@ -3,7 +3,7 @@ set -euo pipefail
 
 APP_DIR="$HOME/Bettertext"
 REPO_URL="https://github.com/bettertext-project/better-text-web.git"
-DEB_URL="https://github.com/bettertext-project/better-text-web/blob/main/bettertext_1.0.0-2_all.repacked.deb"
+DEB_URL="https://github.com/bettertext-project/better-text-web/blob/main/bettertext_1.0_amd64.deb"
 DEB_PATH="$APP_DIR/bettertext_1.0.0-2_all.deb"
 
 # Colors
